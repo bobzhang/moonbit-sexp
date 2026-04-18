@@ -1,0 +1,33 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "bobzhang/sexp"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn atom(String) -> Sexp
+
+pub fn cons(Sexp, Sexp_list) -> Sexp_list
+
+pub fn list(Sexp_list) -> Sexp
+
+// Errors
+
+// Types and methods
+pub(all) enum Sexp {
+  Atom(String)
+  List(Sexp_list)
+} derive(@debug.Debug)
+pub impl Show for Sexp
+
+pub(all) enum Sexp_list {
+  Nil
+  Cons(Sexp, Sexp_list)
+} derive(@debug.Debug)
+pub impl Show for Sexp_list
+
+// Type aliases
+
+// Traits
+
