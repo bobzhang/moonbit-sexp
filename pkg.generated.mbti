@@ -15,19 +15,21 @@ pub fn list(Sexp_list) -> Sexp
 // Errors
 
 // Types and methods
+#derive(@debug.Debug)
 pub(all) enum Sexp {
   Atom(String)
   List(Sexp_list)
-} derive(@debug.Debug)
+}
 pub fn Sexp::output(Self, &Logger) -> Unit
 pub fn Sexp::to_repr(Self) -> @debug.Repr
 pub fn Sexp::to_string(Self) -> String
 pub impl Show for Sexp
 
+#derive(@debug.Debug)
 pub(all) enum Sexp_list {
   Nil
   Cons(Sexp, Sexp_list)
-} derive(@debug.Debug)
+}
 pub fn Sexp_list::output(Self, &Logger) -> Unit
 pub fn Sexp_list::to_repr(Self) -> @debug.Repr
 pub fn Sexp_list::to_string(Self) -> String
