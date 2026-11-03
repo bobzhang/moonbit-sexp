@@ -1,8 +1,9 @@
 ///|
+#derive(Debug)
 pub(all) enum Sexp_list {
   Nil
   Cons(Sexp, Sexp_list)
-} derive(Debug)
+}
 
 ///|
 pub extend Sexp_list with @debug.Debug::{to_repr}
@@ -17,10 +18,11 @@ pub extend Sexp_list with Show::{to_string, output}
 
 ///|
 /// sexp types
+#derive(Debug)
 pub(all) enum Sexp {
   Atom(String)
   List(Sexp_list)
-} derive(Debug)
+}
 
 ///|
 pub extend Sexp with @debug.Debug::{to_repr}
